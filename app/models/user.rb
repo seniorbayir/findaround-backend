@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :products
+
   attr_accessor :password_again, :terms_and_conditions
 
   validates :email, { presence: true, format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/ }, uniqueness: true }
