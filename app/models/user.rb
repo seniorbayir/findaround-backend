@@ -6,9 +6,15 @@ class User < ActiveRecord::Base
 
   validates :email, { presence: true, format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/ }, uniqueness: true }
   validates :password, { presence: true, length: { minimum: 4 } }
-  validates :password_again, { presence: true, length: { minimum: 4 } }
-  validates :terms_and_conditions, { presence: true, acceptance: { accept: 'true' } }
-  validate :passwords_equal
+  validates :password_again, { presence: true, length: { minimum: 4 }, on: :create }
+  validates :terms_and_conditions, { presence: true, acceptance: { accept: 'true' }, on: :create }
+  validate :passwords_equal, on: :create
+
+  before_save do
+    if self.changed.include?  'password'
+      self.password = BCrypt::Password.create(password)
+    end
+  end
 
   def User::get_hash params
     params.permit(:email, :password, :password_again, :terms_and_conditions)
