@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     render json: 'Welcome'
   end
 
+  def test
+    render 'layouts/test'
+  end
+
 end

@@ -1,15 +1,11 @@
 class UsersController < ApplicationController
 
   def create
-    if params[:user]
-      @user = User.new params.require(:user).permit(:email, :password)
-      if @user.save
-        render json: @user
-      else
-        render json: @user.errors.messages
-      end
+    @user = User.new User.get_hash(params)
+    if @user.save
+      render json: @user
     else
-      render json: {}
+      render json: @user.errors.messages
     end
   end
 
@@ -24,7 +20,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by id: params[:id]
-    if @user && params[:user]
+    if @user
       if @user.update_attributes User::get_hash(params)
         render json: @user
       else

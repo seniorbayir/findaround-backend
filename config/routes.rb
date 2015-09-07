@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'application#root'
 
+  get 'test' => 'application#test'
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

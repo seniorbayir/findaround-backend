@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906170813) do
+ActiveRecord::Schema.define(version: 20150906180913) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name",       limit: 255,               null: false
@@ -30,4 +30,5 @@ ActiveRecord::Schema.define(version: 20150906170813) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "products", "users"
 end
