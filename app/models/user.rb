@@ -26,4 +26,9 @@ class User < ActiveRecord::Base
     end
   end
 
+  def as_hash
+    hash = self.attributes
+    hash[:products] = self.products
+    hash
+  end
 end

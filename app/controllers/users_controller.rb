@@ -2,11 +2,11 @@ class UsersController < ApplicationController
 
   ### CREATE ###
   def create
-    @user = User.new User.get_hash(params)
-    if @user.save
-      render json: @user
+    user = User.new User.get_hash(params)
+    if user.save
+      render json: user.as_hash
     else
-      render json: @user.errors.messages
+      render json: user.errors.messages
     end
   end
 
@@ -16,14 +16,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by id: params[:id]
-    render json: @user
+    user = User.find_by id: params[:id]
+    render json: user.as_hash
   end
 
   def products
-    @user = User.find_by id: params[:id]
-    if @user
-      render json: @user.products
+    user = User.find_by id: params[:id]
+    if user
+      render json: user.products
     else
       render json: nil
     end
@@ -31,12 +31,12 @@ class UsersController < ApplicationController
 
   ### UPDATE ###
   def update
-    @user = User.find_by id: params[:id]
-    if @user
-      if @user.update_attributes User::get_hash(params)
-        render json: @user
+    user = User.find_by id: params[:id]
+    if user
+      if user.update_attributes User::get_hash(params)
+        render json: user.as_hash
       else
-        render json: @user.errors.messages
+        render json: user.errors.messages
       end
     else
       render json: {}
@@ -45,10 +45,10 @@ class UsersController < ApplicationController
 
   ### REMOVE ###
   def destroy
-    @user = User.find_by id: params[:id]
-    if @user
-      @user.destroy
-      render json: @user
+    user = User.find_by id: params[:id]
+    if user
+      user.destroy
+      render json: user.as_hash
     else
       render json: {}
     end

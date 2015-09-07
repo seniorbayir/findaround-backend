@@ -9,4 +9,10 @@ class Product < ActiveRecord::Base
   def Product.get_hash params
     params.permit(:name, :price, :user_id)
   end
+
+  def as_hash
+    hash = self.attributes
+    hash[:user] = self.user
+    hash
+  end
 end
