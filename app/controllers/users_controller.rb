@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  ### CREATE ###
   def create
     @user = User.new User.get_hash(params)
     if @user.save
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
     end
   end
 
+  ### GET ###
   def index
     render json: User.all
   end
@@ -18,6 +20,16 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def products
+    @user = User.find_by id: params[:id]
+    if @user
+      render json: @user.products
+    else
+      render json: nil
+    end
+  end
+
+  ### UPDATE ###
   def update
     @user = User.find_by id: params[:id]
     if @user
@@ -31,6 +43,7 @@ class UsersController < ApplicationController
     end
   end
 
+  ### REMOVE ###
   def destroy
     @user = User.find_by id: params[:id]
     if @user
