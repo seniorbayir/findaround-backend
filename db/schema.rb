@@ -11,36 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907220418) do
+ActiveRecord::Schema.define(version: 20150907221927) do
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id",    limit: 4
+    t.integer "product_id", limit: 4
+  end
+
+  add_index "orders", ["product_id"], name: "index_orders_on_product_id", using: :btree
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "products", force: :cascade do |t|
-    t.string   "name",       limit: 255,               null: false
-    t.float    "price",      limit: 24,  default: 0.0
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.integer  "user_id",    limit: 4
+    t.string  "name",     limit: 255
+    t.float   "price",    limit: 24,  default: 0.0
+    t.integer "venue_id", limit: 4
   end
 
-  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
+  add_index "products", ["venue_id"], name: "index_products_on_venue_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
-    t.string   "content",    limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string  "content",    limit: 255
+    t.integer "user_id",    limit: 4
+    t.integer "product_id", limit: 4
   end
 
+  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
-    t.string   "email",      limit: 255
-    t.string   "password",   limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string "email",    limit: 255
+    t.string "password", limit: 255
   end
 
   create_table "venues", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string  "name",    limit: 255
+    t.integer "user_id", limit: 4
   end
 
-  add_foreign_key "products", "users"
+  add_index "venues", ["user_id"], name: "index_venues_on_user_id", using: :btree
+
 end

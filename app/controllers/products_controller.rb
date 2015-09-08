@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   def create
     product = Product.new Product.get_hash(params)
+    product.venue = Venue.find(params[:venue_id])
     if product.save
       render json: product.as_hash
     else
@@ -21,7 +22,7 @@ class ProductsController < ApplicationController
   def update
     product = Product.find_by id: params[:id]
     if product
-      if product.update_attributes product::get_hash(params)
+      if product.update_attributes Product::get_hash(params)
         render json: product.as_hash
       else
         render json: product.errors.messages
