@@ -1,0 +1,5 @@
+.jumbotron
+  .list-group
+    = render partial: 'user', collection: @users, layout: 'user_wrapper'
+= link_to 'new', action: 'new'
+= link_to 'all', action: 'index'
