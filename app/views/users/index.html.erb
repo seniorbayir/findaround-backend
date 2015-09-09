@@ -1,0 +1,11 @@
+<%= content_for :title do %>
+  <title>Bok</title>
+<% end %>
+
+<div class="jumbotron">
+  <div class="list-group">
+    <%= render partial: 'user', collection: @users, layout: 'user_wrapper' %>
+  </div>
+  <%= link_to 'new', action: 'new' %>
+  <%= link_to 'all', action: 'index' %>
+</div>

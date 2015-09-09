@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <div>
+    <% if @user.errors %>
+      <% @user.errors.full_messages.each do |m| %>
+        <div class="alert-danger"><%= m %></div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= form_for @user do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control', placeholder: 'email' %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control', placeholder: 'password' %>
+      <%= f.label :password_again %>
+      <%= f.password_field :password_again, class: 'form-control', placeholder: 'password again' %>
+      <%= f.submit class: 'btn-default form-control' %>
+  <% end %>
+  <%= link_to 'all', action: 'index' %>
+  <%= link_to 'new', action: 'new' %>
+</div>

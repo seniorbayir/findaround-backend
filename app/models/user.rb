@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def User::get_hash params
-    params.permit(:email, :password, :password_again)
+    params.require(:user).permit(:email, :password, :password_again)
   end
 
   def passwords_equal
