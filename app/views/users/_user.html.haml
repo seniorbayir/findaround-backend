@@ -1,3 +1,8 @@
 = div_for user do
   id: #{user.id} | email: #{user.email}
-  = link_to 'edit', action: 'edit', id: user.id
+  %h2 Reviews
+  - user.reviews.each do |r|
+    = div_for r do
+      id: #{r.id} | product id: #{r.product.id}
+  %h2 Venue
+  = user.venue.present? ? user.venue.id : 'no venue'

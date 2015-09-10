@@ -3,4 +3,4 @@
     - @user.errors.full_messages.each do |m|
       .alert-danger #{m}
   = render 'user_form', user: @user
-  = link_to 'all', action: 'index'
+  = link_to 'all', { action: 'index' }, class: 'btn btn-default'

@@ -1,5 +1,11 @@
 .jumbotron
   .list-group
-    = render partial: 'user', collection: @users, layout: 'user_wrapper'
-= link_to 'new', action: 'new'
-= link_to 'all', action: 'index'
+    - @users.each do |user|
+      .list-group-item
+        = div_for user do
+          id: #{user.id} | email: #{user.email}
+          = link_to 'edit', { action: 'edit', id: user.id }, class: 'btn btn-default'
+          = link_to 'go', user, class: 'btn btn-default'
+    -# = render partial: 'user', collection: @users, layout: 'user_wrapper'
+  = link_to 'new', { action: 'new' }, class: 'btn btn-default'
+  = link_to 'all', { action: 'index' }, class: 'btn btn-default'

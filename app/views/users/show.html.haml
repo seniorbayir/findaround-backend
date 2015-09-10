@@ -2,6 +2,6 @@
 
 .jumbotron
   = render 'user', user: @user
-  = link_to 'all', action: 'index'
-  = link_to 'new', action: 'new'
-  = link_to 'edit', action: 'edit'
+  = link_to 'all', { action: 'index' }, class: 'btn btn-default'
+  = link_to 'new', { action: 'new' }, class: 'btn btn-default'
+  = link_to 'edit', { action: 'edit' }, class: 'btn btn-default'
