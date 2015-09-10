@@ -1,0 +1,125 @@
+= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?callback=initMap'
+
+.container.company-page
+  .col-xs-12
+    -# COMPANY HEADER
+    .company-header
+      %div
+        %h1
+          = @venue[:name]
+        %div
+          %span.supplychain
+            = @venue[:supplychain]
+        %div
+          %span.type
+            = @venue[:type]
+      %div
+        .open-until
+          = "Open until #{@venue[:hours][0][1]}"
+        .distance
+          = "#{@venue[:location][:distance]} m"
+      %div
+        .rank
+          %div
+            = @venue[:voteCount]
+          %div
+            = @venue[:vote]
+        %div
+          .contact
+            %a.call
+            %a.email
+            %a.website
+  .col-xs-12
+    %hr.no-margin
+  .col-xs-12.col-sm-6.no-padding
+    -# COMPANY GALLERY
+    .company-gallery
+      .swiper-container.gallery
+        .swiper-wrapper
+          - @venue[:media].each do |img|
+            .swiper-slide
+              = image_tag img
+        .swiper-button-prev
+        .swiper-button-next
+      .hidden-xs.swiper-container.gallery-thumbs
+        .swiper-wrapper
+          - @venue[:media].each do |img|
+            = image_tag img, class: 'swiper-slide'
+  .col-xs-12.col-sm-6.reviews
+    %h2 Recent Reviews
+    %div
+      - @reviews.each do |review|
+        = render 'components/review', review: review
+    %div
+      %button.btn-grad See All Reviews
+  .col-xs-12
+    %hr.no-margin
+  .col-xs-12.no-padding
+    .col-xs-12.col-sm-6
+      -# OPERATING HOURS
+      .operating-hours
+        %h2 Operating Hours
+        %div
+          .active
+            %span Monday
+            %span 07:00 to 22:00
+          %div
+            %span Tuesday
+            %span 07:00 to 22:00
+          %div
+            %span Wednesday
+            %span 07:00 to 22:00
+          %div
+            %span Thursday
+            %span 07:00 to 22:00
+          %div
+            %span Friday
+            %span 07:00 to 22:00
+          %div
+            %span Saturday
+            %span.open-all-day
+              = image_tag 'svg/open_24_hours.svg'
+              = " Open all day"
+            -# %span Sunday
+            -# %span.closed
+              -# img{src='svg/closed_icon.svg'}
+              -# |  Closed
+    .col-xs-12.col-sm-6.no-padding
+      .company-location
+        #map
+        %div
+          = @venue[:location][:address]
+
+:javascript
+  $(document).ready(function() {
+    //- PHOTO GALLERY
+    var gallery = new Swiper('.company-page .swiper-container.gallery', {
+      nextButton: '.company-page .swiper-container.gallery .swiper-button-next',
+      prevButton: '.company-page .swiper-container.gallery .swiper-button-prev',
+      pagination: '.company-page .swiper-container.gallery .swiper-pagination',
+      grabCursor: true
+    });
+    //- THUMBNAILS GALLERY
+    var galleryThumbs = new Swiper('.company-page .swiper-container.gallery-thumbs', {
+      pagination: '.company-page .swiper-container.gallery-thumbs .swiper-pagination',
+      spaceBetween: 5,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      touchRatio: .2,
+      slideToClickedSlide: true
+    });
+    gallery.params.control = galleryThumbs;
+    galleryThumbs.params.control = gallery;
+    //- COMPANY LOCATION ON GOOGLE MAP
+    window.initMap = function () {
+      var loc = new google.maps.LatLng(41.008207, 28.967440)
+      var map = new google.maps.Map($('#map')[0], {
+        center: loc,
+        zoom: 17
+      });
+      var marker = new google.maps.Marker({
+        position: loc,
+        map: map
+      });
+    }
+  });

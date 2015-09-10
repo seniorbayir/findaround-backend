@@ -1,0 +1,14 @@
+.review
+  %img.avatar{src: review[:user][:avatar]}
+  .info
+    .name
+      = review[:user][:name]
+    .vote
+      = review[:vote]
+    .line
+    - if review[:product]
+      %a.product
+        = review[:product][:name]
+  .message
+    = review[:message]
+

@@ -1,0 +1,134 @@
+.product-page
+  -# PRODUCT NAVIGATION BAR
+  .product-navbar-container
+    .container.product-navbar
+      .name
+        = @product[:name]
+      .rank
+        = @product[:voteCount]
+        = @product[:vote]
+      .price
+        = "#{@product[:price]}.00 $"
+  %div
+    -# PRODUCT HEADER
+    .container-fluid.company-header
+      .container
+        %div
+          %div
+            %div
+              %img{src: @venue[:media][1]}
+            %div
+              %h3
+                = @venue[:name]
+          %div
+            %div
+              %a.call
+            %div
+              %a.hidden-xs.email
+            %div.hidden-xs.open-until
+              = "Open until #{@venue[:hours][0][1]}"
+            %div.hidden-xs.distance
+              = "#{@venue[:location][:distance]} m"
+  .container
+    .row
+      .col-xs-12.col-sm-8.no-padding
+        .product-gallery
+          .hidden-xs.swiper-container.gallery-thumbs
+            .swiper-wrapper
+              - @product[:media].each do |img|
+                = image_tag img, class: 'swiper-slide'
+          .swiper-container.gallery
+            .swiper-wrapper
+              - @product[:media].each do |img|
+                .swiper-slide
+                  = image_tag img
+            .swiper-button-prev
+            .swiper-button-next
+        %hr
+        .product-header
+          %h1
+            = @product[:name]
+          .rank
+            %div
+              = @product[:voteCount]
+            %div
+              = @product[:vote]
+        .subtypes
+          .subtype
+            %div Small
+            %div $23.00
+          .subtype
+            %div Medium
+            %div $25.50
+          .subtype
+            %div Subtype 3
+            %div $31.00
+        %hr
+        .folders
+          %button.folder Folder Name 1
+          %button.folder Folder Name 2
+          %button.folder Folder Name 3
+        %hr
+        .description
+          %h2 Description and Details
+          %div
+            = @product[:description]
+        %hr
+      .col-xs-12.col-sm-4
+        .pay-form
+          %select
+            %option Quantity 1
+            %option Quantity 2
+            %option Quantity 3
+          %h3 Ship to:
+          %select
+            %option Address Seoul
+          %h3 Payment Method:
+          %select
+            %option Quantity 1
+            %option Quantity 2
+            %option Quantity 3
+          %div
+            %button.btn-grad Save this
+            %button Buy
+    .reviews.col-xs-12.col-sm-8
+      %h2 Reviews
+      %div
+        - @reviews.each do |review|
+          = render 'components/review', review: review
+
+:javascript
+  $(document).ready(function() {
+    //- PHOTO GALLERY
+    var gallery = new Swiper('.product-page .swiper-container.gallery', {
+      nextButton: '.product-page .swiper-container.gallery .swiper-button-next',
+      prevButton: '.product-page .swiper-container.gallery .swiper-button-prev',
+      pagination: '.product-page .swiper-container.gallery .swiper-pagination',
+      grabCursor: true
+    });
+    //- THUMBNAILS GALLERY
+    var galleryThumbs = new Swiper('.product-page .swiper-container.gallery-thumbs', {
+      direction: 'vertical',
+      pagination: '.product-page .swiper-container.gallery-thumbs .swiper-pagination',
+      spaceBetween: 5,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      touchRatio: .2,
+      slideToClickedSlide: true,
+      nextButton: '.product-page .swiper-container.gallery .swiper-button-next',
+      prevButton: '.product-page .swiper-container.gallery .swiper-button-prev'
+    });
+    gallery.params.control = galleryThumbs;
+    galleryThumbs.params.control = gallery;
+    //- PRODUCT NAVBAR ON SCROLL DOWN
+    var pos = $('.subtypes').offset().top;
+    $(window).scroll(function() {
+      var scrollTop = $(window).scrollTop();
+      var bar = $('.product-navbar-container');
+      if (scrollTop > pos && !bar.hasClass('active')) {
+        bar.addClass('active');
+      } else if (scrollTop < pos  && bar.hasClass('active')){
+        bar.removeClass('active');
+      }
+    });
+  });
