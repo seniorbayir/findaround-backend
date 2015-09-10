@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>email round</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Search-Result-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD-Product-PopUp-View" sketch:type="MSArtboardGroup" transform="translate(-775.000000, -881.000000)">
+            <g id="Product-Popup-View" sketch:type="MSLayerGroup" transform="translate(345.000000, 237.000000)">
+                <g id="Company-List-Look-@-Prodcut-Page-Copy" transform="translate(0.000000, 629.000000)" sketch:type="MSShapeGroup">
+                    <g id="email-round" transform="translate(430.000000, 15.000000)">
+                        <ellipse id="Oval-6" fill="#F3703D" cx="20" cy="19.9561404" rx="20" ry="19.9561404"></ellipse>
+                        <path d="M12,18.9517073 L12.2457492,27.2658537 L16.3319622,22.4409756 L12,18.9517073 Z" id="Shape" fill="#FFFFFF"></path>
+                        <path d="M19.4569216,24.9609756 L16.7314311,22.7263415 L13.4208957,27.4458537 L26.4228503,27.6097561 L22.6713821,22.0960976 L19.4569216,24.9609756 Z" id="Shape" fill="#FFFFFF"></path>
+                        <path d="M23.1633863,21.7302439 L27.3158403,26.5760976 L27.0033444,18.262439 L23.1633863,21.7302439 Z" id="Shape" fill="#FFFFFF"></path>
+                        <path d="M18.9042386,16.6678049 L18.3889743,20.775122 L21.0724952,20.4117073 L20.4080621,16.4565854 C21.4294889,16.2731707 22.2769698,16.042439 22.3300638,15.9229268 C22.456478,15.64 19.9620727,11.9604878 19.4796761,12.0004878 C18.9982908,12.0414634 16.5478777,16.3092683 16.8401474,16.5297561 C17.1314057,16.7507317 17.9687734,16.7590244 18.9042386,16.6678049 L18.9042386,16.6678049 Z" id="Shape" fill="#FFFFFF"></path>
+                        <path d="M27.0033444,17.7019512 L21.1908189,17.8058537 L21.8340144,20.775122 L17.7887596,21.2126829 L18.1958134,17.8590244 L12.4470007,17.9614634 L19.501925,23.302439 L27.0033444,17.7019512 Z" id="Shape" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

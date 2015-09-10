@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="50px" viewBox="0 0 24 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>right on picture</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Product-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g sketch:type="MSArtboardGroup" transform="translate(-826.000000, -329.000000)" id="right-on-picture">
+            <g sketch:type="MSLayerGroup" transform="translate(826.000000, 329.000000)">
+                <rect id="on-picture-arrow-bg" fill-opacity="0.4" fill="#000000" sketch:type="MSShapeGroup" x="0" y="0" width="24" height="50" rx="5"></rect>
+                <path d="M18,17.481875 C18,18.1025 10.0229628,24.12375 10.0229628,24.561875 C10.0229628,24.999375 18,31.36875 18,31.935 C18,32.5 15.4090975,35 14.9315495,35 C14.4540015,35 6,25.128125 6,24.489375 C6,23.850625 15.3238628,15 15.8860618,15 C16.4488446,15 18,16.861875 18,17.481875 Z" id="right-white" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(12.000000, 25.000000) scale(-1, 1) translate(-12.000000, -25.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
