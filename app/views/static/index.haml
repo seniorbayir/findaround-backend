@@ -1,0 +1,235 @@
+#main-page
+  -# SEARCH PAGE
+  #search-page
+    -# MOBILE SEARCH PROMOTE
+    .row.hidden-sm.hidden-md.hidden-lg.mobile-search-promote
+      %p Find anything nearby...
+      %p Spa, Black Orchids, Toothpaste etc.
+    -# MAIN LOGO
+    .hidden-xs.logo
+      = image_tag 'logo.png'
+    -# SEARCH PART
+    .search-box
+      %form
+        %input#location-picker{placeholder: "Current Location"}
+        %input#search-input{placeholder: "I am looking for"}
+        %input{type: "submit", value: "Find Now"}
+    .hidden-xs.desktop-search-promote
+      %p Find anything nearby...
+      %p Bracelet, Haircut, Pottery kebab, Spa, Yellow Rose, Toothpaste and many more..
+    -# TRANSITION BUTTONS
+    .learn-more-about
+      %a{href: "#"}
+        %div Learn more about
+        .orange Marmara for Consumers
+      %a{href: "#"}
+        %div Learn more about
+        .blue Marmara for Businesses
+  -# OVERVIEW PAGE
+  #overview-page
+    .container
+      .col-xs-12.col-md-10.col-md-offset-1
+        .col-xs-12.col-sm-6
+          %div
+            = image_tag 'martmaraLogoSketch.png'
+          %div
+            %p Real World
+          %div
+            %p Search Engine
+          %div.overview-buttons
+            %button Get Started
+            %a.download-app-btn
+          %div.play-vid
+            %a
+              = image_tag 'svg/play.svg'
+            %span Watch The Video
+        .col-xs-12.col-sm-6
+          .iphone-pic
+            %img{src: "http://www.martmara.com/images/sidephone-small.png"}
+            %img{src: "http://www.martmara.com/images/sidephone-big.png"}
+  -# REST OF PAGE
+  #rest-of-page
+    .subpage
+      %div
+        %h1 Now, you can search the real world!
+      %div
+        %p We will guide you to products, services and stores that you need.<br> Around your real location.
+    .container
+      = render 'components/box_group', { |
+        id: 0, |
+        boxes:[ |
+          { |
+            title:'Search around you', |
+            content:'Search your need & find Products, Services and Stores around yourself.' |
+          },{ |
+            title:'See all the options', |
+            content:'Yes. all of them. Not just one location that someone suggested, We provide every possible option nearby' |
+          },{ |
+            title:'Visit the right places directly', |
+            content:'Pick any of the options you would like to visit. Don’t waste time on streets.' |
+          },{ |
+            title:'Buy or book it instantly', |
+            content:'Buy it on Martmara at that very second and enjoy the ride.' |
+          } |
+        ] |
+      } |
+    .subpage
+      %div
+        %h4 It only takes 5 minutes
+      %div
+        %button Signup Now
+    %hr
+    .subpage
+      %div
+        %h1 and, Book Services Instantly
+      %div
+        %p Found it! Great!<br>now you can book Balloon Tours, rent bikes & many more easily.
+    .container
+      = render 'components/box_group', { |
+        id: 1, |
+        boxes: [ |
+          { |
+            title:'256 Bit Security System', |
+            content:'Our payment system is aligned with top world standards' |
+          },{ |
+            title:'Money back Guarantee', |
+            content:'Pay with confidence, If something goes wrong, and not as advertised we refund full amount' |
+          },{ |
+            title:'Hassle free Bookings & Revisions', |
+            content:'We let you see all the availabilities and get quotes from many suppliers at a glance. Booking has never been simpler' |
+          },{ |
+            title:'Transparent Pricing', |
+            content:'You can see all the providers and compare options. We provide the market research to you.' |
+          } |
+        ] |
+      } |
+    .subpage
+      %div
+        %h3 Save TL $ £ ¥ while booking with Martmara Credits
+    %hr
+    .container.subpage.subpage-div
+      %div
+        .col-xs-12.col-sm-6.text
+          %h1 Moving Marketplaces Forward
+          %p We let you tag any keywords, services & products to specific location & seller. Long lasting presence for a one time entry!
+        .col-xs-12.col-sm-6.content
+          %img{src: "http://www.martmara.com/images/sidephone-small.png"}
+          %img{src: "http://www.martmara.com/images/sidephone-big.png"}
+    %hr.no-margin
+    .container.subpage.subpage-div
+      %div
+        %div.col-xs-12.col-sm-6.content
+          - unless Rails.env.development?
+            %iframe{src: "http://www.youtube.com/embed/HTHyQIwIJA"}
+        .col-xs-12.col-sm-6.text
+          %h1 Are you new at a place?<br>We got your back..
+          %p We make everything searchable and accessible Findout Wifi Passwords, Gourmet Food, Necessities
+          %ul
+            %li Specific Food names - Vegan, Artichoke, Pottery Kebab etc.
+            %li Wifi Passwords of every shop available
+            %li Necessities, Parking Lot, Toilet, ATM etc.
+    %hr
+    .subpage
+      %div
+        %h1 Get Online Customers to your offline shop.
+      %div
+        %p We let you not only be reacleable on the internet, but also let you sell online at that very moment.
+      %div
+        .play-vid Watch The Video
+    .container
+      = render 'components/box_group', { |
+        id: 2, |
+        boxes: [ |
+          { |
+            title:'Smart Tag System', |
+            content:'Just tell us what people are looking for when they visit your shop. ' + |
+                    'You won’t believe the rich content you will make in just a week.' |
+          },{ |
+            title:'Automated Keyword Libraries', |
+            content:'Specific to your business, we generate keywords that is potentially applicable. So you can save hours to generate content.' |
+          },{ |
+            title:'One Internet Solution is Enough', |
+            content:'We designed Martmara for your specific digital marketing needs and ' + |
+            'we intend to be your life time partner on your ventures tech needs..' |
+          } |
+        ] |
+      } |
+    %hr
+    .container.subpage.subpage-div
+      %div
+        .col-xs-12.col-sm-6.text
+          %h1 All of your business content at one place
+          %p We do a great favor to you and provide you a very rich content with great keywords, products and services. You can just update it and enjoy having all of your content online.
+        .col-xs-12.col-sm-6.content
+          - unless Rails.env.development?
+            %iframe{src: "http://www.youtube.com/embed/gROwdfKHhkk"}
+    %hr
+    .container.subpage.list
+      .col-xs-12.col-md-10.col-md-offset-1
+        .col-xs-12.col-sm-6
+          %h4 Moving your business online in 5 minutes
+          %hr
+          %h4 Works on iOS, mobile web and Desktop
+          %hr
+          %h4 Rich content delivered instantly
+        %hr.col-xs-12.hidden-sm.hidden-md.hidden-lg
+        .col-xs-12.col-sm-6
+          %h4 Adjust prices, pictures and videos of offerings
+          %hr
+          %h4 Payment processing is available in U.S., & Turkey
+          %hr
+          %h4 Get in touch with consumers as they make purchase
+    .container
+      .box-container
+        = render 'components/box_group', { |
+          id: 3, |
+          boxes: [ |
+            { |
+              title:'Karen Walsh', |
+              content:'My wife showed me this and words dropped from my mouth: Fuck Yeah! this is it!' }, |
+            { |
+              title:'Dorothy Weaver', |
+              content:'Wow, I just had an orgasm when i saw all the wifi passwords around.. Trust me this app is gem!' |
+            },{ |
+              title:'Jerry Bailey', |
+              content:'Amazing experice, everything is at one place' |
+            } |
+          ] |
+        } |
+    %hr
+    .subpage
+      %div
+        %h1 Testimonials
+      %div
+        %h1 Set up you company in 5 minutes
+      %div
+        %p Download our iOS application and add your business in just 5 minutes. Edit your items and start selling instantly.
+      %div
+        %button Signup Now
+    %hr
+  :javascript
+    $(document).ready(function() {
+      $('.hidden-md.hidden-lg.swiper-container').each(function (swiper) {
+        var id = $(this).attr('swiper-id');
+        new Swiper('.swiper-container[swiper-id='+id+']', {
+          nextButton: '.swiper-container[swiper-id='+id+']'+ ' .swiper-button-next',
+          prevButton: '.swiper-container[swiper-id='+id+']'+ ' .swiper-button-prev',
+          pagination: '.swiper-container[swiper-id='+id+']'+ ' .swiper-pagination',
+          grabCursor: true
+        });
+      });
+      $('#left-panel-icon').click(function(e) {
+        var leftPanelContainer = $('#left-panel');
+        leftPanelContainer.toggleClass('active');
+      });
+      //- CLOSE LEFT PANEL WHEN CLICKED REST OF THE PAGE1
+      $('#main-page').click(function () {
+        if($('#left-panel').hasClass('active')) {
+          ($('#left-panel').removeClass('active'));
+        }
+      });
+      //- NAVIGATION BAR MOBILE MENU
+      $('#navbar-collapse').click(function () {
+        $('.menu-xs').toggleClass('active');
+      });
+    });

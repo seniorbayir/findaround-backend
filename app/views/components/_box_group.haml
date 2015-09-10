@@ -1,0 +1,22 @@
+.hidden-md.hidden-lg.swiper-container{'swiper-id' => id}
+  .swiper-wrapper.box-container
+    - boxes.each do |box|
+      .box.swiper-slide
+        %img.img-circle{src:"http://www.757angelsgroup.com/show/main-profile/wiki-image/20140518072131!Placeholder.png"}
+        %div
+          %h1
+            = box[:title]
+          %p
+            = box[:content]
+  .swiper-button-prev
+  .swiper-button-next
+  .swiper-pagination
+.hidden-xs.hidden-sm.box-container
+  - boxes.each do |box|
+    .box
+      %img.img-circle{src:"http://www.757angelsgroup.com/show/main-profile/wiki-image/20140518072131!Placeholder.png"}
+      %div
+        %h1
+          = box[:title]
+        %p
+          = box[:content]

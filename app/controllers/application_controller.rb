@@ -4,11 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
   def root
-    render json: 'Welcome'
-  end
-
-  def test
-    render 'layouts/test'
+    render 'static/index'
   end
 
 end
