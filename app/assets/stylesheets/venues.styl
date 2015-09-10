@@ -1,0 +1,166 @@
+.company-page
+  display-flex()
+  flex-wrap(wrap)
+  align-items(stretch)
+  position relative
+  padding 0
+  .company-header
+    text-align center
+    > div
+      margin-bottom 25px
+    > div:nth-child(2)
+      display-flex()
+      justify-content(space-between)
+    > div:nth-child(3)
+      display-flex()
+      justify-content(space-between)
+      @media (min-width min-sm)
+        justify-content(center)
+        flex-direction(row-reverse)
+        margin-top -50px
+        .rank
+          position absolute
+          top 20px
+          right 15px
+    h1
+      margin 25px auto
+      font normal normal normal 22px 'AvenirNext-Medium'
+      @media (min-width min-sm)
+        max-width 60%
+        font-size 25px
+    .supplychain, .type
+      display inline-block
+      min-height 25px
+      padding-left 25px
+      margin-bottom 5px
+      left-icon-background()
+      color grey2
+      font normal normal normal 14px/25px 'AvenirNext-Medium'
+    .supplychain
+      background-image svg('industry_chains_icon')
+    .type
+      background-image svg('categories_icon')
+    .open-until
+      color grey2
+      display inline-block
+      padding-left 20px
+      left-icon-background()
+      font normal normal normal 14px/20px 'AvenirNext-Medium'
+      background-image svg('clock_icon')
+    .distance
+      color grey2
+      display inline-block
+      padding-left 30px
+      left-icon-background()
+      background-image svg('distance')
+    .contact
+      display-inline-flex()
+      justify-content(center)
+      a
+        display inline-block
+        margin auto 10px
+        left-icon-background()
+        square(40px)
+        @media (min-width min-sm)
+          padding-left 50px
+          line-height 40px
+          font-family 'PT Sans'
+        &.call
+          background-image svg('call_round')
+          @media (min-width min-sm)
+            margin-right 50px
+            &:after
+              content "CALL"
+        &.email
+          background-image svg('email_round')
+          @media (min-width min-sm)
+            margin-right 50px
+            &:after
+              content "EMAIL"
+        &.website
+          background-image svg('website_round')
+          @media (min-width min-sm)
+            margin-right 50px
+            &:after
+              content "WEBSITE"
+  .company-gallery
+    margin 15px auto
+    .swiper-container.gallery
+      height 300px
+      margin 15px auto
+      background-color grey1
+      padding 0
+      @media (min-width min-sm)
+        solid-border(grey1, 10px)
+      .swiper-wrapper
+      .swiper-slide
+        display-flex()
+        width 100%
+        img
+          margin auto
+          min-width 100%
+          max-width 100%
+    .swiper-container.gallery-thumbs
+      height 50px
+      margin 15px auto
+      img.swiper-slide
+        min-width 50px
+        max-width 50px
+        solid-border(grey1, 5px)
+  .reviews
+    align-self stretch
+    min-height 100%
+    padding-bottom 25px
+    h2
+      text-align center
+      color grey3
+      font normal normal bold 14px 'PT Sans'
+    h2 + div + div
+      text-align center
+      button
+        font-family 'Ubuntu'
+        padding 5px 20px
+    @media (min-width min-sm)
+      border-left 1px solid grey1
+  .operating-hours
+    h2
+      text-align center
+      color grey3
+      font normal normal bold 14px 'PT Sans'
+    > div
+      color grey2
+      font normal normal normal 14px/25px 'AvenirNext-Medium'
+      margin auto
+      @media (min-width min-xs)
+        width 60%
+      @media (min-width min-sm)
+        width 80%
+      @media (min-width min-md)
+        width 60%
+      @media (min-width min-lg)
+        width 50%
+      > div
+        white-space nowrap
+        &.active
+          color lightBlue
+        span
+          &:first-child
+            display inline-block
+            width 50%
+          &:last-child
+            display inline-block
+            width 50%
+            text-align center
+  .company-location
+    text-align center
+    color grey2
+    font normal normal normal 14px 'AvenirNext-Medium'
+    #map
+      margin 20px auto
+      width 100%
+      min-height 200px
+  .col-xs-12.no-padding
+    @media (min-width min-sm)
+      padding 5px 15px
+    @media (min-width min-md)
+      padding 20px 30px

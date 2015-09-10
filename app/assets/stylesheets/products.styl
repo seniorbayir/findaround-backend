@@ -1,0 +1,214 @@
+.product-page
+  .container
+    padding-left 0
+    padding-right 0
+  .company-header
+    margin 0
+    background-color grey1
+    border-bottom 2px solid #CCC
+    div.container > div
+      display-flex()
+      justify-content(space-between)
+      align-items(center)
+      height 70px
+      > div
+        display-flex()
+        align-items(center)
+        > div
+          margin auto 10px
+      img
+        square(50px)
+        solid-border(grey2, 0)
+      h3
+        color lightBlue
+        font normal normal normal 14px 'AvenirNext-Medium'
+      a
+        display inline-block
+        left-icon-background()
+        square(40px)
+        &.call
+          background-image svg('call_round')
+        &.email
+          background-image svg('email_round')
+      .open-until
+        color grey2
+        display inline-block
+        padding-left 20px
+        left-icon-background()
+        font normal normal normal 14px/20px 'AvenirNext-Medium'
+        background-image svg('clock_icon')
+      .distance
+        color grey2
+        display inline-block
+        padding-left 30px
+        left-icon-background()
+        background-image svg('distance')
+  .product-gallery
+    display-flex()
+    margin 15px auto
+    .swiper-container.gallery
+      max-width 90%
+      height 400px
+      margin 15px 0
+      background-color grey1
+      @media (min-width min-sm)
+        margin 15px 30px
+        solid-border(grey1, 10px)
+      .swiper-wrapper
+      .swiper-slide
+        display-flex()
+        width 100%
+        img
+          margin auto
+          min-width 100%
+          max-width 100%
+    .swiper-container.gallery-thumbs
+      min-width 50px
+      margin 25   px 15px
+      img.swiper-slide
+        width 50px
+        max-height 50px
+        solid-border(grey1, 5px)
+      .swiper-button-next
+        position absolute
+        top 280px
+        left 12px
+        background-image svg('down')
+      .swiper-button-prev
+        position absolute
+        top 20px
+        left 12px
+        background-image svg('up')
+  .product-header
+    display-flex()
+    align-items(center)
+    flex-wrap(wrap)
+    justify-content(center)
+    margin auto 15px
+    @media (min-width min-sm)
+      flex-wrap(nowrap)
+    h1
+      margin 15px 10px
+      font normal normal bold 25px 'Ubuntu'
+  .subtypes
+    display-flex()
+    flex-direction(column)
+    padding-left 15px
+    padding-right 15px
+    @media (min-width min-sm)
+      flex-direction(row)
+      align-items(stretch)
+    .subtype
+      display-inline-flex()
+      justify-content(space-between)
+      width 75%
+      padding 15px
+      margin 20px auto
+      background-color white
+      solid-border(grey1, 10px)
+      trans(color border-color)
+      &:hover
+        cursor pointer
+        color lightBlue
+        border-color lightBlue
+        trans(color border-color, .25s)
+      > div:first-child
+        font normal normal normal 20px/25px 'Ubuntu'
+      > div:last-child
+        font normal normal normal 25px/25px 'AvenirNext-Medium'
+      @media (min-width min-xs)
+        width 50%
+      @media (min-width min-sm)
+        width auto
+        padding 20px
+        margin 10px
+        flex-direction(column)
+        text-align center
+        > div
+          margin 10px auto
+  .folders
+    display-flex()
+    flex-wrap(wrap)
+    justify-content(center)
+    @media(min-width min-sm)
+      justify-content(flex-start)
+    padding 15px
+    .folder
+      padding 7px 20px
+      margin 10px
+      color grey2
+      background-color grey1
+      font normal normal normal 14px 'AvenirNext-Demi'
+      solid-border(grey1, 10px)
+      &:hover
+        color grey3
+        solid-border(grey2, 10px)
+  .description
+    padding-left 15px
+    padding-right 15px
+    text-align center
+    @media (min-width min-sm)
+      text-align left
+    h2
+      color grey3
+      font normal normal normal 16px 'AvenirNext-Demi'
+    > div
+      color grey2
+      font normal normal normal 13px/20px 'AvenirNext-Medium'
+  .reviews
+    h2
+      color grey3
+      font normal normal normal 16px 'AvenirNext-Demi'
+    padding-left 15px
+    padding-right 15px
+  .pay-form
+    display-flex()
+    flex-direction(column)
+    padding 20px
+    margin 30px 30px
+    @media (min-width min-sm)
+      margin 30px auto
+    solid-border(grey1)
+    h3
+      font normal normal normal 18px 'AvenirNext-Medium'
+    select
+      padding-left 40px
+      background svg('down') 90% 50% no-repeat, svg('catalog_view') 15px 50% no-repeat
+      &:first-child
+        align-self(center)
+    > div
+      display-flex()
+      justify-content(space-between)
+      margin-top 20px
+      button
+        min-width 45%
+  .product-navbar-container
+    position fixed
+    top 75px
+    left 0
+    right 0
+    z-index 2
+    border-bottom 1px solid grey2
+    height 0
+    overflow hidden
+    background-color grey0
+    trans(height, .25s)
+    &.active
+      height 50px
+    .product-navbar
+      display-flex()
+      flex-wrap(nowrap)
+      justify-content(space-between)
+      align-items(center)
+      .name
+        max-width 50%
+        color grey2
+        font normal normal bold 16px 'Ubuntu'
+        overflow hidden
+        white-space nowrap
+      .rank *
+        border-color grey2
+        background-color transparent
+      .price
+        color grey3
+        font normal normal normal 18px 'AvenirNext-Medium'

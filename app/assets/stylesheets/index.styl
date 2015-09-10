@@ -1,0 +1,183 @@
+#main-page
+  width 100%
+  margin-left 0
+  background-color #F9F9F9
+#search-page
+  width 100%
+  min-height 100vh
+  padding-top 75px
+  margin-top -75px;
+  color grey2
+  font-family 'Ubuntu', sans-serif
+  text-align center
+  trans(width margin, .4s)
+  .search-box
+    margin-bottom 5vh
+  .logo
+    margin 7vh auto 5vh auto
+  .desktop-search-promote
+    margin-bottom 15vh
+    font normal 15px 'AvenirNext-Medium'
+    color grey3
+  .mobile-search-promote
+    font normal 15px 'AvenirNext-Medium'
+    color grey3
+    margin 7vh auto 2vh auto
+  .learn-more-about
+    display-flex()
+    flex-wrap(wrap)
+    justify-content(space-around)
+    @media (min-width min-sm)
+      margin auto 20%
+    @media (min-width min-lg)
+      margin auto 30%
+    a
+      display inline-block
+      padding-top 70px
+      margin 25px 10px
+      background-repeat no-repeat
+      background-position center top
+      white-space nowrap
+      text-align center
+      @media (max-width min-xs)
+        min-width 100%
+      &:first-child
+        background-image svg('shopping_basket')
+        &:hover
+          background-image svg('shopping_basket_mouseover')
+      &:last-child
+        background-image svg('business_icon')
+        &:hover
+          background-image svg('business_icon_mouseover')
+  .orange
+    color orange
+  .blue
+    color blue
+#overview-page
+  background-color alpha(blue,.7)
+  font-family 'PT Sans'
+  padding-top 20px
+  @media (max-width (min-sm - 1))
+    text-align center
+  .container > div
+    display-flex()
+    flex-wrap(wrap)
+    align-items(flex-end)
+    justify-content(center)
+  > button,  > a
+    margin 6vh auto 2vh auto
+  .overview-buttons
+    display-flex()
+    flex-wrap(wrap)
+    margin-left -10px
+    @media (max-width (min-sm - 1))
+      justify-content(center)
+      margin-left 0px
+    > *
+      margin 5px 10px
+  p
+    color white
+    font normal normal 600 50px 'AvenirNext-Medium'
+    text-shadow 0px 2px 5px rgba(0,0,0,.5)
+    @media (max-width (min-sm - 1))
+      font-size 40px
+  button
+    width 146px
+    height 43px
+    font-size 17px
+    color blue
+    background-color white
+    shadow(3px, 2px, 3px, 0px, rgba(0,0,0,.5))
+    transition none
+    &:hover
+      color @lightBlue
+      background-color #F3F3F3
+  .download-app-btn
+    display inline-block
+    shadow(3px, 2px, 3px, 0px, rgba(0,0,0,.5))
+    border-radius 5px
+    background-image svg("download_on_the_app_store_badge_us-uk_135x40")
+    size-from-image("public/svg/download_on_the_app_store_badge_us-uk_135x40.svg")
+    transition none
+    &:hover
+      background-image svg("download_on_the_app_store_badge_us-uk_135x40_mouseover")
+  .play-vid
+    color white
+    padding-left 0px
+    padding-right 0px
+    margin 3vh auto 5vh auto
+    a
+      margin-right 10px
+  .iphone-pic
+    height 100%
+    display-flex()
+    align-items(flex-end)
+    justify-content(center)
+    > img
+      max-width 50%
+#rest-of-page
+  .subpage
+    padding-left 15px
+    padding-right 15px
+    font-family 'AvenirNext-Medium'
+    text-align center
+    & + hr
+      margin-bottom 40px
+    &.subpage-div
+      > div
+        display-flex()
+        flex-wrap(wrap)
+        align-items(stretch)
+      .text
+        display-flex()
+        flex-direction(column)
+        justify-content(center)
+      .content
+        display-flex()
+        align-items(flex-end)
+        justify-content(center)
+        img
+          max-width 50%
+      ul
+        padding-left 0
+        margin-top 3vh
+        color grey2
+        font-size 16px
+        list-style-position inside
+    h1
+      margin 6vh auto 5vh auto
+      color grey3
+      font normal normal normal 30px 'AvenirNext-Medium'
+    h3
+      color grey3
+      font normal normal normal 25px 'AvenirNext-Medium'
+      margin 3vh auto
+    h4
+      font normal normal normal 15px 'AvenirNext-Medium'
+    hr
+      margin-top 0
+    &.list
+      margin 5vh auto 15vh auto
+      h4
+        @media (min-width min-sm)
+          text-align left
+        margin 0 auto 10px auto
+        text-align center
+    p
+      color grey2
+      font normal normal normal 24px 'AvenirNext-Medium'
+    iframe
+      width 100%
+      min-height 285px
+    .play-vid
+      display-inline-flex()
+      flex-direction(column)
+      justify-content(center)
+      height 32px
+      padding-left 45px
+      color blue
+      background svg('play_blue') left no-repeat
+    button
+      font normal normal normal 17px 'PT Sans'
+      padding-left 30px
+      padding-right 30px
