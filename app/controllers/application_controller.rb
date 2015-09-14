@@ -53,4 +53,8 @@ class ApplicationController < ActionController::Base
     }
     render 'static/product'
   end
+
+  def test
+    render 'static/test'
+  end
 end
