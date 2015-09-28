@@ -4,10 +4,12 @@
     %title
       = yield(:title).presence or 'Real World Search Engine, literally...'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:300|PT+Sans:400,700'
-    = stylesheet_link_tag 'swiper.min', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag 'bootstrap.min', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'swiper.min'
+    = stylesheet_link_tag 'bootstrap.min'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'jquery-2.1.4.min'
+    = javascript_include_tag 'swiper.jquery.min'
     %meta{name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"}
     = csrf_meta_tags
   %body

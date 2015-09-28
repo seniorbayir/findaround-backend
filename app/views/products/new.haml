@@ -1,0 +1,16 @@
+.row
+  .col-xs-4.col-xs-offset-4
+    .panel
+      .panel-body
+        - @product.errors.full_messages.each do |m|
+          .alert-danger
+            = m
+        = debug(@product.attributes)
+        = form_for @product, url: { action: 'create' } do |f|
+          = f.label :name
+          = f.text_field :name, class: 'form-control', placeholder: 'Product Name'
+          = f.label :venue
+          -# = f.select :venue_id, options_from_collection_for_select(Venue.all, :name, :id), include_blank: 'Select', class: 'form-control'
+          -# = f.collection_select :venue_id, Venue.all, :id, :name, class: 'form-control'
+          = f.file_field :birth
+          = f.submit class: 'form-control'
