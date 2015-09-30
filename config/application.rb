@@ -29,5 +29,9 @@ module MartmaraBackend
       g.template_engine :haml
     end
 
+    environment = Sprockets::Environment.new
+    environment.append_path 'lib/assets/javascripts'
+    environment.append_path 'lib/assets/stylesheets'
+
   end
 end

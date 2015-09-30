@@ -1,0 +1,125 @@
+blue        = rgb(9, 110, 207)
+orange      = rgb(243,112,61)
+lightBlue   = rgb(85,167,246)
+paleBlue    = rgb(199,221,243)
+grey0       = rgb(243,243,243)
+grey1       = rgb(236,236,236)
+grey2       = rgb(151,151,151)
+grey3       = rgb(78,78,78)
+white       = rgb(255,255,255)
+min-xs      = 500px
+min-sm      = 767px
+min-md      = 992px
+min-lg      = 1200px
+
+svg(name)
+  url('svg/' + name + '.svg')
+png(name)
+  url(name + '.png')
+display-flex()
+  display -webkit-flex
+  display -moz-flex
+  display -ms-flexbox
+  display -ms-flex
+  display flex
+display-inline-flex()
+  display -webkit-inline-flex
+  display -moz-inline-flex
+  display -ms-inline-flexbox
+  display -ms-inline-flex
+  display inline-flex
+flex-direction(value)
+  -webkit-flex-direction value
+  -moz-flex-direction value
+  -ms-flex-direction value
+  flex-direction value
+flex-grow(value)
+  -webkit-flex-grow value
+  -moz-flex-grow value
+  -ms-flex-grow value
+  flex-grow value
+flex-wrap(value)
+  -webkit-flex-wrap value
+  -moz-flex-wrap value
+  -ms-flex-wrap value
+  flex-wrap value
+background-size(value)
+  -webkit-background-size value
+  -moz-background-size value
+  -o-background-size value
+  background-size value
+left-icon-background()
+  background-repeat no-repeat
+  background-position left
+justify-content(value)
+  -webkit-justify-content value
+  -moz-justify-content value
+  if value == space-between
+    -ms-flex-pack justify
+  else if value == space-around
+    -ms-flex-pack distribute
+  else
+    -ms-flex-pack value
+  -ms-justify-content value
+  justify-content value
+align-items(value)
+  -webkit-align-items value
+  -moz-align-items value
+  -ms-align-items value
+  if value == flex-start
+    -ms-flex-align start
+  if value == flex-end
+    -ms-flex-align end
+  else
+    -ms-flex-align value
+  align-items value
+align-self(value)
+  -webkit-align-self value
+  -moz-align-self value
+  -ms-align-self value
+  if value == flex-start
+    -ms-flex-align start
+  if value == flex-end
+    -ms-flex-align end
+  else
+    -ms-flex-align value
+  align-self value
+solid-border(color radius = 5px)
+  border 1px solid color
+  border-radius radius
+appearance(value)
+   -webkit-appearance value
+   -moz-appearance value
+   appearance value
+square(x)
+  min-width x
+  min-height x
+  width x
+  height x
+size-from-image(url)
+  min-width image-size(url)[0]
+  min-height image-size(url)[1]
+shadow(h v blur spread color)
+  -webkit-box-shadow h v blur spread color
+  -moz-box-shadow h v blur spread color
+  box-shadow h v blur spread color
+placeholder(color)
+  &::-webkit-input-placeholder
+     color color
+  &:-moz-placeholder
+     color color
+  &::-moz-placeholder
+     color color
+  &:-ms-input-placeholder
+     color color
+gradient(property color1 color2 deg=180deg)
+  add-property(property, -webkit-linear-gradient(deg, color1, color2))
+  add-property(property, -moz-linear-gradient(deg, color1, color2))
+  add-property(property, -o-linear-gradient(deg, color1, color2))
+  add-property(property, linear-gradient(deg, color1, color2))
+no-bg()
+  background-color rgba(0,0,0,0)
+trans(properties=background, duration=.5s, effect=ease)
+  transition-property s(join(',', properties))
+  transition-duration duration
+  transition-timing-function effect
