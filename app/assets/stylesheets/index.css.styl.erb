@@ -44,13 +44,13 @@
       @media (max-width min-xs)
         min-width 100%
       &:first-child
-        background-image svg('shopping_basket')
+        background-image url(<%= asset_path 'svg/shopping_basket.svg' %>)
         &:hover
-          background-image svg('shopping_basket_mouseover')
+          background-image url(<%= asset_path 'svg/shopping_basket_mouseover.svg' %>)
       &:last-child
-        background-image svg('business_icon')
+        background-image url(<%= asset_path 'svg/business_icon.svg' %>)
         &:hover
-          background-image svg('business_icon_mouseover')
+          background-image url(<%= asset_path 'svg/business_icon_mouseover.svg' %>)
   .orange
     color orange
   .blue
@@ -98,11 +98,12 @@
     display inline-block
     shadow(3px, 2px, 3px, 0px, rgba(0,0,0,.5))
     border-radius 5px
-    background-image svg("download_on_the_app_store_badge_us-uk_135x40")
-    size-from-image("../images/svg/download_on_the_app_store_badge_us-uk_135x40.svg")
+    background-image url(<%= asset_path 'svg/download_on_the_app_store_badge_us-uk_135x40' %>)
+    min-width 135px
+    min-height 40px
     transition none
     &:hover
-      background-image svg("download_on_the_app_store_badge_us-uk_135x40_mouseover")
+      background-image url(<%= asset_path 'svg/download_on_the_app_store_badge_us-uk_135x40_mouseover' %>)
   .play-vid
     color white
     padding-left 0px
@@ -178,7 +179,7 @@
       height 32px
       padding-left 45px
       color blue
-      background svg('play_blue') left no-repeat
+      background url(<%= asset_path 'svg/play_blue.svg' %>) left no-repeat
     button
       font normal normal normal 17px 'PT Sans'
       padding-left 30px

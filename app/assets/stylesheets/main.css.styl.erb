@@ -12,13 +12,13 @@ body
   .no-padding
     padding 0
   &:after
-    pre = svg('shopping_basket_mouseover')
-    push(pre, svg('business_icon_mouseover'))
-    push(pre, svg('download_on_the_app_store_badge_us-uk_135x40_mouseover'))
-    push(pre, svg('search_icon_mouseover'))
-    push(pre, svg('current_location_mouseover'))
-    push(pre, svg('dolu'))
-    push(pre, svg('bos'))
+    pre = url(<%= asset_path 'svg/shopping_basket_mouseover.svg' %>)
+    push(pre, url(<%= asset_path 'svg/business_icon_mouseover.svg' %>))
+    push(pre, url(<%= asset_path 'svg/download_on_the_app_store_badge_us-uk_135x40_mouseover.svg' %>))
+    push(pre, url(<%= asset_path 'svg/search_icon_mouseover.svg' %>))
+    push(pre, url(<%= asset_path 'svg/current_location_mouseover.svg' %>))
+    push(pre, url(<%= asset_path 'svg/dolu.svg' %>))
+    push(pre, url(<%= asset_path 'svg/bos.svg' %>))
     display none
     content pre
   a
@@ -54,10 +54,10 @@ body
       visibility visible
       square(20px)
       margin-top -5px
-      background svg('bos') center no-repeat
+      background url(<%= asset_path 'svg/bos.svg' %>) center no-repeat
       trans(background-image, .05s, linear)
     &:checked:before
-      background-image svg('dolu')
+      background-image url(<%= asset_path 'svg/dolu.svg' %>)
       trans(background-image, .05s, linear)
   .btn-trans, input[type=submit].btn-trans
     color blue
@@ -100,18 +100,18 @@ body
     solid-border(grey2)
     color grey2
     background-color white
-    background svg('down') 85% 50% no-repeat
+    background url(<%= asset_path 'svg/down.svg' %>) 85% 50% no-repeat
   iframe
     border none
   @font-face
     font-family AvenirNext-Medium
-    src url("AvenirNextLTPro-Regular.woff")
+    src url(<%= asset_path "AvenirNextLTPro-Regular.woff" %>)
   @font-face
     font-family AvenirNext-Demi
-    src url("AvenirNextLTPro-Demi.woff")
+    src url(<%= asset_path "AvenirNextLTPro-Demi.woff" %>)
   @font-face
     font-family BebasNeueRegular
-    src url("BebasNeue Regular.woff")
+    src url(<%= asset_path "BebasNeueRegular.woff" %>)
   .play-vid:hover
     cursor pointer
   .icon
@@ -122,18 +122,21 @@ body
         trans(all, .25s)
         cursor pointer
     &-down
-      size-from-image('../images/svg/down.svg')
-      background-image svg('down')
+      background-image url(<%= asset_path 'svg/down.svg' %>)
+      min-width 21px
+      min-height 12px
     &-search
-      size-from-image('../images/svg/search_icon.svg')
-      background-image svg('search_icon')
+      background-image url(<%= asset_path 'svg/search_icon.svg' %>)
+      min-width 20px
+      min-height 20px
       &:hover
-        background-image svg('search_icon_mouseover')
+        background-image url(<%= asset_path 'svg/search_icon_mouseover.svg' %>)
     &-locate
-      size-from-image('../images/svg/current_location.svg')
-      background-image svg('current_location')
+      background-image url(<%= asset_path 'svg/current_location.svg' %>)
+      min-width 27px
+      min-height 27px
       &:hover
-        background-image svg('current_location_mouseover')
+        background-image url(<%= asset_path 'svg/current_location_mouseover.svg' %>)
   hr.no-margin
     margin 0
 
@@ -250,12 +253,12 @@ body
 .swiper-container
   .swiper-button-prev
     left -3px
-    background-image svg('left_on_picture')
+    background-image url(<%= asset_path 'svg/left_on_picture.svg' %>)
     @media (min-width min-xs)
       left 15px
   .swiper-button-next
     right -3px
-    background-image svg('right_on_picture')
+    background-image url(<%= asset_path 'svg/right_on_picture.svg' %>)
     @media (min-width min-xs)
       right 15px
   .swiper-pagination .swiper-pagination-bullet-active
@@ -317,7 +320,7 @@ body
   top 23px
   padding 5px
   z-index 4
-  background svg('hamburger_colorful_inside') center no-repeat
+  background url(<%= asset_path 'svg/hamburger_colorful_inside.svg' %>) center no-repeat
   solid-border(rgb(0,66,129))
   trans(border-color)
   &:hover
@@ -333,7 +336,7 @@ body
   padding 0px 25px 0px 18px
   margin 0px
   z-index 3
-  background transparent png('map') center no-repeat
+  background transparent url(<%= asset_path 'map.png' %>) center no-repeat
   background-size(cover)
   text-align center
   overflow-y scroll
@@ -392,11 +395,11 @@ body
         outline none
     #email
       text-align center
-      background alpha(blue, .7) svg('email') 10px 10px no-repeat
+      background alpha(blue, .7) url(<%= asset_path 'svg/email.svg' %>) 10px 10px no-repeat
       border-radius 5px 5px 0px 0px
     #password
       text-align center
-      background alpha(blue, .7) svg('password') 15px 5px no-repeat
+      background alpha(blue, .7) url(<%= asset_path 'svg/password.svg' %>) 15px 5px no-repeat
       border-radius 0px 0px 5px 5px
     a#forgot-password:hover
        color rgb(85,85,85)

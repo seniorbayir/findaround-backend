@@ -39,22 +39,22 @@
       color grey2
       font normal normal normal 14px/25px 'AvenirNext-Medium'
     .supplychain
-      background-image svg('industry_chains_icon')
+      background-image url(<%= asset_path 'svg/industry_chains_icon.svg' %>)
     .type
-      background-image svg('categories_icon')
+      background-image url(<%= asset_path 'svg/categories_icon.svg' %>)
     .open-until
       color grey2
       display inline-block
       padding-left 20px
       left-icon-background()
       font normal normal normal 14px/20px 'AvenirNext-Medium'
-      background-image svg('clock_icon')
+      background-image url(<%= asset_path 'svg/clock_icon.svg' %>)
     .distance
       color grey2
       display inline-block
       padding-left 30px
       left-icon-background()
-      background-image svg('distance')
+      background-image url(<%= asset_path 'svg/distance.svg' %>)
     .contact
       display-inline-flex()
       justify-content(center)
@@ -68,19 +68,19 @@
           line-height 40px
           font-family 'PT Sans'
         &.call
-          background-image svg('call_round')
+          background-image url(<%= asset_path 'svg/call_round.svg' %>)
           @media (min-width min-sm)
             margin-right 50px
             &:after
               content "CALL"
         &.email
-          background-image svg('email_round')
+          background-image url(<%= asset_path 'svg/email_round.svg' %>)
           @media (min-width min-sm)
             margin-right 50px
             &:after
               content "EMAIL"
         &.website
-          background-image svg('website_round')
+          background-image url(<%= asset_path 'svg/website_round.svg' %>)
           @media (min-width min-sm)
             margin-right 50px
             &:after

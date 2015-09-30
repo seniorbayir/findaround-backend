@@ -29,22 +29,22 @@
         left-icon-background()
         square(40px)
         &.call
-          background-image svg('call_round')
+          background-image url(<%= asset_path 'svg/call_round.svg' %>)
         &.email
-          background-image svg('email_round')
+          background-image url(<%= asset_path 'svg/email_round.svg' %>)
       .open-until
         color grey2
         display inline-block
         padding-left 20px
         left-icon-background()
         font normal normal normal 14px/20px 'AvenirNext-Medium'
-        background-image svg('clock_icon')
+        background-image url(<%= asset_path 'svg/clock_icon.svg' %>)
       .distance
         color grey2
         display inline-block
         padding-left 30px
         left-icon-background()
-        background-image svg('distance')
+        background-image url(<%= asset_path 'svg/distance.svg' %>)
   .product-gallery
     display-flex()
     margin 15px auto
@@ -75,12 +75,12 @@
         position absolute
         top 280px
         left 12px
-        background-image svg('down')
+        background-image url(<%= asset_path 'svg/down.svg' %>)
       .swiper-button-prev
         position absolute
         top 20px
         left 12px
-        background-image svg('up')
+        background-image url(<%= asset_path 'svg/up.svg' %>)
   .product-header
     display-flex()
     align-items(center)
@@ -175,7 +175,7 @@
       font normal normal normal 18px 'AvenirNext-Medium'
     select
       padding-left 40px
-      background svg('down') 90% 50% no-repeat, svg('catalog_view') 15px 50% no-repeat
+      background url(<%= asset_path 'svg/down.svg' %>) 90% 50% no-repeat, url(<%= asset_path 'svg/catalog_view.svg' %>) 15px 50% no-repeat
       &:first-child
         align-self(center)
     > div

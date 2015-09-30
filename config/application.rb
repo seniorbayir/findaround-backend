@@ -23,7 +23,7 @@ module MartmaraBackend
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.assets.precompile += %w(.svg .eot .woff .ttf)
+    # config.assets.precompile += %w(.svg .eot .woff .ttf)
 
     config.generators do |g|
       g.template_engine :haml
@@ -32,6 +32,8 @@ module MartmaraBackend
     environment = Sprockets::Environment.new
     environment.append_path 'lib/assets/javascripts'
     environment.append_path 'lib/assets/stylesheets'
+
+    config.static_cache_control = "public, max-age=31536000"
 
   end
 end

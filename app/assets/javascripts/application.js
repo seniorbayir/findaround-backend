@@ -12,7 +12,5 @@
 //
 //= require jquery-2.1.4.min
 //= require swiper.jquery.min
-// require jquery_ujs
-// require bok
 //= require turbolinks
 //= require_tree .

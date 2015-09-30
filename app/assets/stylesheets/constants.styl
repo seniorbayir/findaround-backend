@@ -12,10 +12,6 @@ min-sm      = 767px
 min-md      = 992px
 min-lg      = 1200px
 
-svg(name)
-  url('svg/' + name + '.svg')
-png(name)
-  url(name + '.png')
 display-flex()
   display -webkit-flex
   display -moz-flex
@@ -96,9 +92,6 @@ square(x)
   min-height x
   width x
   height x
-size-from-image(url)
-  min-width image-size(url)[0]
-  min-height image-size(url)[1]
 shadow(h v blur spread color)
   -webkit-box-shadow h v blur spread color
   -moz-box-shadow h v blur spread color
