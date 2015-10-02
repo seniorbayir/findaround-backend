@@ -1,0 +1,620 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap.min
+ *= require swiper.min
+ *= require main
+ *= require index
+ *= require products
+ *= require venues
+ */
+
+@import 'constants'
+
+html
+  overflow-x hidden
+  #content
+    width 100%
+    padding-top 75px
+    trans(width padding margin, .4s)
+body
+  overflow-x hidden
+  background-color #F9F9F9
+  .no-padding
+    padding 0
+  &:after
+    pre = url(<%= asset_path 'svg/shopping_basket_mouseover.svg' %>)
+    push(pre, url(<%= asset_path 'svg/business_icon_mouseover.svg' %>))
+    push(pre, url(<%= asset_path 'svg/download_on_the_app_store_badge_us-uk_135x40_mouseover.svg' %>))
+    push(pre, url(<%= asset_path 'svg/search_icon_mouseover.svg' %>))
+    push(pre, url(<%= asset_path 'svg/current_location_mouseover.svg' %>))
+    push(pre, url(<%= asset_path 'svg/dolu.svg' %>))
+    push(pre, url(<%= asset_path 'svg/bos.svg' %>))
+    display none
+    content pre
+  a
+    color grey2
+    text-decoration none
+    trans(color background-image)
+    &:hover
+      cursor pointer
+      trans(color background-image, .25s)
+    &:hover, &:active, &:focus
+      color rgb(85,85,85)
+      text-decoration none
+  button, input[type=submit]
+    color white
+    background-color blue
+    padding 8px 12px
+    border none
+    border-radius 5px
+    trans(color border-color background)
+    &:hover
+      background-color lightBlue
+      trans(color border-color background, .25s)
+    &:disabled
+      color grey2
+      background-color paleBlue
+      border-color paleBlue
+  input[type=checkbox]
+    visibility hidden
+    margin-right 15px
+    &:before
+      content ""
+      display inline-block
+      visibility visible
+      square(20px)
+      margin-top -5px
+      background url(<%= asset_path 'svg/bos.svg' %>) center no-repeat
+      trans(background-image, .05s, linear)
+    &:checked:before
+      background-image url(<%= asset_path 'svg/dolu.svg' %>)
+      trans(background-image, .05s, linear)
+  .btn-trans, input[type=submit].btn-trans
+    color blue
+    solid-border(blue)
+    no-bg()
+    trans(color border-color)
+    &:hover:not(:disabled)
+      color lightBlue !important
+      border-color lightBlue !important
+      background-color alpha(white .15)
+      trans(color border-color, .25s)
+    &:disabled
+      color grey2
+      background-color paleBlue
+      border-color paleBlue
+  .btn-grad, input[type=submit].btn-grad
+    color grey2
+    solid-border(grey2)
+    trans(color background)
+    gradient(background, white, grey1)
+    // background-color white
+    background-repeat no-repeat
+    background-position 0px 20px
+    &:hover:not(:disabled)
+      color grey3
+      background-position 0px 00px
+      background-color white
+      trans(color background, .25s)
+    &:disabled
+      color grey2
+      background-color white
+      border-color grey1
+  input
+    padding 8px 12px
+    &:focus
+      placeholder(transparent)
+  select
+    padding 5px 40px 5px 10px
+    appearance(none)
+    solid-border(grey2)
+    color grey2
+    background-color white
+    background url(<%= asset_path 'svg/down.svg' %>) 85% 50% no-repeat
+  iframe
+    border none
+  @font-face
+    font-family AvenirNext-Medium
+    src url(<%= asset_path "AvenirNextLTPro-Regular.woff" %>)
+  @font-face
+    font-family AvenirNext-Demi
+    src url(<%= asset_path "AvenirNextLTPro-Demi.woff" %>)
+  @font-face
+    font-family BebasNeueRegular
+    src url(<%= asset_path "BebasNeueRegular.woff" %>)
+  .play-vid:hover
+    cursor pointer
+  .icon
+    &-down, &-search, &-locate
+      display inline-block
+      trans(all)
+      &:hover
+        trans(all, .25s)
+        cursor pointer
+    &-down
+      background-image url(<%= asset_path 'svg/down.svg' %>)
+      min-width 21px
+      min-height 12px
+    &-search
+      background-image url(<%= asset_path 'svg/search_icon.svg' %>)
+      min-width 20px
+      min-height 20px
+      &:hover
+        background-image url(<%= asset_path 'svg/search_icon_mouseover.svg' %>)
+    &-locate
+      background-image url(<%= asset_path 'svg/current_location.svg' %>)
+      min-width 27px
+      min-height 27px
+      &:hover
+        background-image url(<%= asset_path 'svg/current_location_mouseover.svg' %>)
+  hr.no-margin
+    margin 0
+
+.search-box
+  display-inline-flex()
+  flex-direction(column)
+  max-width 400px
+  // margin auto auto 5vh auto
+  font-size 16px
+  text-align center
+  form
+    solid-border(grey2)
+    margin auto 5%
+    border-radius 5px
+  input
+    width 100%
+    border none
+    text-align center
+    &#location-picker
+      border-radius 5px 5px 0px 0px
+      background-color grey1
+    &[type=submit]
+      font-weight bold
+      border-radius 0px 0px 5px 5px
+  @media (min-width min-sm)
+    flex-direction(row)
+    min-width 100%
+    max-width 100%
+    form
+      display-inline-flex()
+      flex-wrap(nowrap)
+      max-width 100%
+      margin auto
+    input
+      width auto
+      border-bottom 1px solid grey2
+      &#location-picker
+        width 30%
+        margin 0
+        text-align left
+        border-radius 5px 0px 0px 5px
+        background-color grey1
+      &#search-input
+        width 50%
+        margin 0
+        text-align left
+      &[type=submit]
+        width 20%
+        margin 0
+        font-weight bold
+        border-radius 0px 5px 5px 0px
+        min-width 100px
+.box-container
+  text-align center
+  height 300px
+  padding-bottom 15px
+  margin 5vh auto
+  @media (min-width min-md)
+    display-flex()
+    justify-content(center)
+    width inherit
+    height auto
+    overflow-x hidden
+  .box
+    display-flex()
+    flex-direction(column)
+    justify-content(space-between)
+    align-items(center)
+    max-width 80%
+    padding 20px 25px
+    margin auto 10%
+    solid-border(rgb(216,216,216))
+    border-radius 10px
+    background-color white
+    @media (min-width min-xs)
+      max-width 60%
+      margin 0 20%
+    @media (min-width min-sm)
+      max-width 40%
+      margin 0 30%
+    @media (min-width min-md)
+      max-width 260px
+      max-width 20%
+      padding 20px 25px
+      margin 0px 20px
+    > div
+      max-width 100%
+      margin auto
+    h1
+      font normal normal bold 14px / 20px 'PT Sans'
+    p
+      font normal normal normal 14px / 20px 'AvenirNext-Medium'
+    img
+      width 100px
+      height 100px
+.rank
+  display inline-block
+  width 130px
+  font normal normal normal 16px/33px 'AvenirNext-Medium'
+  > div
+    display inline-block
+    width 50%
+    padding-top 3px
+    text-align center
+    solid-border(grey1)
+  > div:first-child
+    color grey2
+    border-right 0
+    border-radius 5px 0px 0px 5px
+    background-color grey1
+  > div:last-child
+    color lightBlue
+    border-radius 0px 5px 5px 0px
+.swiper-container
+  .swiper-button-prev
+    left -3px
+    background-image url(<%= asset_path 'svg/left_on_picture.svg' %>)
+    @media (min-width min-xs)
+      left 15px
+  .swiper-button-next
+    right -3px
+    background-image url(<%= asset_path 'svg/right_on_picture.svg' %>)
+    @media (min-width min-xs)
+      right 15px
+  .swiper-pagination .swiper-pagination-bullet-active
+    background-color grey3
+.review
+  position relative
+  min-height 50px
+  margin 20px auto
+  line-height 25px
+  .avatar
+    position absolute
+    display inline-block
+    max-width 50px
+    max-height 50px
+    solid-border(grey1)
+  .info
+    display inline-block
+    width 100%
+    padding-left 70px
+    overflow hidden
+    .name
+      display inline-block
+      width 100%
+      color grey3
+      font normal normal normal 14px 'AvenirNext-Demi'
+      white-space nowrap
+      @media (min-width min-sm)
+        width 40%
+    .vote
+      display inline-block
+      padding-right 10px
+      color lightBlue
+      font normal normal normal 14px 'AvenirNext-Demi'
+    .line
+      display inline-block
+      min-width 1px
+      min-height 20px
+      margin-bottom  -5px
+      background-color grey1
+    .product
+      display inline-block
+      max-width 10%
+      padding-left 10px
+      white-space nowrap
+      color grey3
+      font normal normal normal 14px 'Ubuntu'
+      &:hover
+        text-decoration underline
+  .message
+    color grey2
+    font normal normal normal 14px/20px 'AvenirNext-Medium'
+    @media (min-width min-sm)
+      padding-left 70px
+#left-panel-icon
+  position fixed
+  width 30px
+  height 32px
+  left 20px
+  top 23px
+  padding 5px
+  z-index 4
+  background url(<%= asset_path 'svg/hamburger_colorful_inside.svg' %>) center no-repeat
+  solid-border(rgb(0,66,129))
+  trans(border-color)
+  &:hover
+    cursor pointer
+    border-color white
+    trans(border-color, .25s)
+#left-panel
+  position fixed
+  width 100%
+  height 100%
+  left -100%
+  top 0px
+  padding 0px 25px 0px 18px
+  margin 0px
+  z-index 3
+  background transparent url(<%= asset_path 'map.png' %>) center no-repeat
+  background-size(cover)
+  text-align center
+  overflow-y scroll
+  width-xs = 100%
+  width-sm = 33%
+  width-md = 22%
+  shadow(0, 0, 0, 0, rgba(120,120,120,0))
+  trans(left width box-shadow, .40s)
+  &.active
+    left 0
+    shadow(2px, 0px, 10px, 3px, rgba(120,120,120,1))
+  left-panel-width(w)
+    width w
+    left (- w)
+    &.active + #navbar-container
+      left w
+    &.active + #navbar-container + #content
+      width 100%
+      margin-left w
+      #search-page
+        width 100% - w
+  @media (min-width min-xs) and (max-width min-sm)
+    padding-left 20%
+    padding-right 20%
+  @media (min-width min-sm)
+    left-panel-width(33%)
+  @media (min-width min-md)
+    left-panel-width(27%)
+  @media (min-width min-lg)
+    left-panel-width(22%)
+  &::-webkit-scrollbar
+    display none
+  img.logo
+    max-width 60%
+    margin 3vh auto
+  p, p *
+    color grey2
+    font-family 'AvenirNext-Medium'
+    font-weight normal !important
+  #login-form > div:first-child
+    margin-bottom 2vh
+    color white
+    font 15px 'Ubuntu'
+    text-align center
+    solid-border(alpha(blue, .7))
+    /*email and user inputs*/
+    input[type=email], input[type=password]
+      width 100%
+      padding 10px 10px 10px 35px
+      border 0
+      border-radius 5px
+      color white
+      placeholder(rgb(199,221,243))
+      &:focus
+        placeholder(transparent)
+        outline none
+    #email
+      text-align center
+      background alpha(blue, .7) url(<%= asset_path 'svg/email.svg' %>) 10px 10px no-repeat
+      border-radius 5px 5px 0px 0px
+    #password
+      text-align center
+      background alpha(blue, .7) url(<%= asset_path 'svg/password.svg' %>) 15px 5px no-repeat
+      border-radius 0px 0px 5px 5px
+    a#forgot-password:hover
+       color rgb(85,85,85)
+  .line
+    display-flex()
+    height 1px
+    span:nth-of-type(1), span:nth-of-type(3)
+      display inline-block
+      width 5%
+      background-color alpha(blue, .7)
+    span:nth-of-type(2)
+      display inline-block
+      width 90%
+      background-color rgb(199,221,243)
+  input[type=submit], #register-btn
+    width 100%
+    padding-top 10px
+    padding-bottom 4px
+    margin-bottom 3vh
+    solid-border(blue)
+    font 24px BebasNeueRegular
+    &:hover
+      border-color lightBlue
+  .social-login
+    display-flex()
+    align-items(stretch)
+    button
+      display-flex-inline()
+      justify-content(center)
+      align-items(center)
+      flex-wrap(nowrap)
+      width 49%
+      padding-top 0
+      padding-bottom 0
+      font 20px 'BebasNeueRegular'
+      white-space nowrap
+      img
+        max-width 28px
+        width auto
+        height 23px
+        padding-right 5%
+      span
+        padding-top 3px
+    #facebook-login
+      border-right none
+      border-radius 5px 0px 0px 5px
+    #google-login
+      border-left none
+      border-radius 0px 5px 5px 0px
+    .line
+      display-flex-inline()
+      flex-direction(column)
+      justify-content(center)
+      width 1px
+      padding 5px 0px
+      min-height 40px
+      border-top 1px solid blue
+      border-bottom 1px solid blue
+      span
+        background-color blue
+        width 1px
+        height 30px
+  #lang-change-btn
+    font-family 'PT Sans'
+    color blue
+    &:hover
+      color lightBlue
+  div:last-child
+    margin 10vh auto 5vh auto
+    @media (max-width min-sm)
+      margin-bottom 100px
+#navbar-container
+  position fixed
+  width 100%
+  height 75px
+  left 0px
+  top 0px
+  z-index 2
+  trans(left, .4s)
+  #navbar
+    width 100%
+    z-index 2
+    gradient(background, white, rgb(243,243,243))
+    shadow(0px, 5px, 5px, -5px, rgb(170, 170, 170, .1));
+    trans(width margin, .4s)
+    > div:first-child
+      display-flex()
+      align-items(center)
+      justify-content(space-between)
+      width 100%
+      height 75px
+      padding-left 60px
+      padding-right 10px
+      margin 0px
+      font 16px 'PT Sans'
+      color grey2
+      > div
+        display-flex()
+        align-items(center)
+        > *
+          margin-right 10px
+      @media (min-width min-xs)
+        padding-left 70px
+        > div > *
+          margin-right 30px
+      @media (min-width min-md)
+        padding-left 8%
+        padding-right 10px
+        > div > *
+          margin-right 20px
+      @media (min-width min-lg)
+        padding-left 6%
+        padding-right 3%
+    /*desktop menu*/
+    .menu-sm
+      display-flex()
+      list-style-type none
+      padding-left 0
+      margin-bottom 0
+      li
+        display inline-block
+        padding-right 25px
+    /*mobile menu*/
+    .menu-xs
+      padding 0px
+      margin 0px
+      z-index 2
+      font 17px 'PT Sans'
+      text-align center
+      list-style-type none
+      li
+        max-height 0px
+        padding 0px 0px
+        overflow hidden
+        border-bottom 0
+        trans(all)
+      &.active
+        li
+          max-height 100px
+          padding 3vh 0px
+          border-bottom 1px solid rgba(85,85,85,.2)
+          trans(all)
+    .download-app-btn
+      padding-left 20px
+      padding-right 20px
+      white-space nowrap
+    /*profile pic and texts*/
+    .profile
+      display-flex()
+      flex-wrap(nowrap)
+      align-items(center)
+      align-content(center)
+      padding 5px 5px
+      font-size 17px
+      solid-border(rgba(0,0,0,0))
+      border-radius 5px
+      trans(border-color .25s)
+      &:hover
+        solid-border(rgba(161,161,161,.7))
+        cursor pointer
+        trans(border-color)
+      > div
+        display-inline-flex()
+        flex-direction(column)
+        padding 0px 5px
+      img
+        width 50px
+        height 50px
+        max-height 50px
+        max-width 50px
+#footer
+  background-color rgb(21,42,59)
+  color grey2
+  > div:first-child
+    display-flex()
+    flex-direction(column)
+    align-items(center)
+    padding 30px 0 10px 0
+    font-family 'PT Sans'
+    @media (min-width min-xs)
+      flex-direction(row)
+      justify-content(space-around)
+      padding-left 25%
+      padding-right 25%
+  > div:last-child
+    display-flex()
+    flex-direction(column)
+    align-items(center)
+    padding 20px 0 60px 0
+    font-family 'AvenirNext-Medium'
+  a
+    margin 10px 10px
+  p
+    margin 0
+
+// @import 'index'
+// @import 'venues'
+// @import 'products'
