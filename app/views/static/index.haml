@@ -207,29 +207,3 @@
       %div
         %button Signup Now
     %hr
-  :javascript
-    $(document).ready(function() {
-      $('.hidden-md.hidden-lg.swiper-container').each(function (swiper) {
-        var id = $(this).attr('swiper-id');
-        new Swiper('.swiper-container[swiper-id='+id+']', {
-          nextButton: '.swiper-container[swiper-id='+id+']'+ ' .swiper-button-next',
-          prevButton: '.swiper-container[swiper-id='+id+']'+ ' .swiper-button-prev',
-          pagination: '.swiper-container[swiper-id='+id+']'+ ' .swiper-pagination',
-          grabCursor: true
-        });
-      });
-      $('#left-panel-icon').click(function(e) {
-        var leftPanelContainer = $('#left-panel');
-        leftPanelContainer.toggleClass('active');
-      });
-      //- CLOSE LEFT PANEL WHEN CLICKED REST OF THE PAGE1
-      $('#main-page').click(function () {
-        if($('#left-panel').hasClass('active')) {
-          ($('#left-panel').removeClass('active'));
-        }
-      });
-      //- NAVIGATION BAR MOBILE MENU
-      $('#navbar-collapse').click(function () {
-        $('.menu-xs').toggleClass('active');
-      });
-    });

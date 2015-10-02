@@ -89,37 +89,3 @@
         #map
         %div
           = @venue[:location][:address]
-
-:javascript
-  $(document).ready(function() {
-    //- PHOTO GALLERY
-    var gallery = new Swiper('.company-page .swiper-container.gallery', {
-      nextButton: '.company-page .swiper-container.gallery .swiper-button-next',
-      prevButton: '.company-page .swiper-container.gallery .swiper-button-prev',
-      pagination: '.company-page .swiper-container.gallery .swiper-pagination',
-      grabCursor: true
-    });
-    //- THUMBNAILS GALLERY
-    var galleryThumbs = new Swiper('.company-page .swiper-container.gallery-thumbs', {
-      pagination: '.company-page .swiper-container.gallery-thumbs .swiper-pagination',
-      spaceBetween: 5,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      touchRatio: .2,
-      slideToClickedSlide: true
-    });
-    gallery.params.control = galleryThumbs;
-    galleryThumbs.params.control = gallery;
-    //- COMPANY LOCATION ON GOOGLE MAP
-    window.initMap = function () {
-      var loc = new google.maps.LatLng(41.008207, 28.967440)
-      var map = new google.maps.Map($('#map')[0], {
-        center: loc,
-        zoom: 17
-      });
-      var marker = new google.maps.Marker({
-        position: loc,
-        map: map
-      });
-    }
-  });
