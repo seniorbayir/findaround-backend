@@ -3,12 +3,12 @@
   .product-navbar-container
     .container.product-navbar
       .name
-        = @product[:name]
+        = @product.name
       .rank
-        = @product[:voteCount]
-        = @product[:vote]
+        -# = @product.voteCount
+        -# = @product.vote
       .price
-        = "#{@product[:price]}.00 $"
+        = "#{@product.price}.00 #{@product.currency_symbol}"
   %div
     -# PRODUCT HEADER
     .container-fluid.company-header
@@ -16,30 +16,30 @@
         %div
           %div
             %div
-              %img{src: @venue[:media][1]}
+              %img{src: @company.photos[1]}
             %div
               %h3
-                = @venue[:name]
+                = @company.name
           %div
             %div
               %a.call
             %div
               %a.hidden-xs.email
             %div.hidden-xs.open-until
-              = "Open until #{@venue[:hours][0][1]}"
+              = "Open until #{@company.operating_hours[0][1]}"
             %div.hidden-xs.distance
-              = "#{@venue[:location][:distance]} m"
+              -# = "#{@company.location.distance} m"
   .container
     .row
       .col-xs-12.col-sm-8.no-padding
         .product-gallery
           .hidden-xs.swiper-container.gallery-thumbs
             .swiper-wrapper
-              - @product[:media].each do |img|
+              - @product.photos.each do |img|
                 = image_tag img, class: 'swiper-slide'
           .swiper-container.gallery
             .swiper-wrapper
-              - @product[:media].each do |img|
+              - @product.photos.each do |img|
                 .swiper-slide
                   = image_tag img
             .swiper-button-prev
@@ -47,12 +47,12 @@
         %hr
         .product-header
           %h1
-            = @product[:name]
+            = @product.name
           .rank
             %div
-              = @product[:voteCount]
+              = @product.voteCount
             %div
-              = @product[:vote]
+              = @product.vote
         .subtypes
           .subtype
             %div Small
@@ -72,7 +72,7 @@
         .description
           %h2 Description and Details
           %div
-            = @product[:description]
+            = @product.description
         %hr
       .col-xs-12.col-sm-4
         .pay-form
@@ -92,7 +92,7 @@
             %button.btn-grad Save this
             %button Buy
     .reviews.col-xs-12.col-sm-8
-      %h2 Reviews
-      %div
-        - @reviews.each do |review|
-          = render 'components/review', review: review
+      -# %h2 Reviews
+      -# %div
+        -# - @reviews.each do |review|
+          -# = render 'components/review', review: review

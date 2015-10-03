@@ -6,24 +6,24 @@
     .company-header
       %div
         %h1
-          = @venue[:name]
+          = @company.name
         %div
           %span.supplychain
-            = @venue[:supplychain]
+            = @company.supplychain
         %div
           %span.type
-            = @venue[:type]
+            = @company.type
       %div
         .open-until
-          = "Open until #{@venue[:hours][0][1]}"
-        .distance
-          = "#{@venue[:location][:distance]} m"
+          = "Open until #{@company.operating_hours[0][1]}"
+        -# .distance
+          -# = "#{@company.location.distance} m"
       %div
         .rank
           %div
-            = @venue[:voteCount]
+            = @company.voteCount
           %div
-            = @venue[:vote]
+            = @company.vote
         %div
           .contact
             %a.call
@@ -36,22 +36,22 @@
     .company-gallery
       .swiper-container.gallery
         .swiper-wrapper
-          - @venue[:media].each do |img|
+          - @company.photos.each do |img|
             .swiper-slide
               = image_tag img
         .swiper-button-prev
         .swiper-button-next
       .hidden-xs.swiper-container.gallery-thumbs
         .swiper-wrapper
-          - @venue[:media].each do |img|
+          - @company.photos.each do |img|
             = image_tag img, class: 'swiper-slide'
   .col-xs-12.col-sm-6.reviews
-    %h2 Recent Reviews
-    %div
-      - @reviews.each do |review|
-        = render 'components/review', review: review
-    %div
-      %button.btn-grad See All Reviews
+    -# %h2 Recent Reviews
+    -# %div
+      -# - @reviews.each do |review|
+        -# = render 'components/review', review: review
+    -# %div
+      -# %button.btn-grad See All Reviews
   .col-xs-12
     %hr.no-margin
   .col-xs-12.no-padding
@@ -88,4 +88,4 @@
       .company-location
         #map
         %div
-          = @venue[:location][:address]
+          = @company.address
