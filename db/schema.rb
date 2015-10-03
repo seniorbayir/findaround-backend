@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20150907221927) do
 
+  create_table "companies", force: :cascade do |t|
+    t.string  "name",    limit: 255
+    t.integer "user_id", limit: 4
+  end
+
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
+
   create_table "orders", force: :cascade do |t|
     t.integer "user_id",    limit: 4
     t.integer "product_id", limit: 4
@@ -22,12 +29,12 @@ ActiveRecord::Schema.define(version: 20150907221927) do
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "products", force: :cascade do |t|
-    t.string  "name",     limit: 255
-    t.float   "price",    limit: 24,  default: 0.0
-    t.integer "venue_id", limit: 4
+    t.string  "name",       limit: 255
+    t.float   "price",      limit: 24,  default: 0.0
+    t.integer "company_id", limit: 4
   end
 
-  add_index "products", ["venue_id"], name: "index_products_on_venue_id", using: :btree
+  add_index "products", ["company_id"], name: "index_products_on_company_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.string  "content",    limit: 255
@@ -42,12 +49,5 @@ ActiveRecord::Schema.define(version: 20150907221927) do
     t.string "email",    limit: 255
     t.string "password", limit: 255
   end
-
-  create_table "venues", force: :cascade do |t|
-    t.string  "name",    limit: 255
-    t.integer "user_id", limit: 4
-  end
-
-  add_index "venues", ["user_id"], name: "index_venues_on_user_id", using: :btree
 
 end

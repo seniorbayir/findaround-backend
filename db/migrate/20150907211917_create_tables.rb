@@ -18,7 +18,7 @@ class CreateTables < ActiveRecord::Migration
       t.string   "password"
     end
 
-    create_table "venues" do |t|
+    create_table "companies" do |t|
       t.string   "name"
     end
 

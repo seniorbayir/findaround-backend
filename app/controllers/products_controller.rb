@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   def create
     product = Product.new Product.get_hash(params)
-    product.venue = Venue.find(params[:venue_id])
+    product.company = Company.find(params[:company_id])
     if product.save
       render json: product.as_hash
     else

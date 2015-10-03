@@ -55,6 +55,10 @@ class ApplicationController < ActionController::Base
   end
 
   def test
+    a = OpenStruct.new
+    a.bok = 'Bok'
+    render json: a
+    return
     render 'static/test'
   end
 end

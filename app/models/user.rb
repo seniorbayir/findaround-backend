@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_one :venue, inverse_of: :user
+  has_one :company, inverse_of: :user
   has_many :reviews, inverse_of: :user, dependent: :destroy
   has_many :orders, inverse_of: :user
   has_many :products, through: :orders
@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   def as_hash
     hash = self.attributes
-    hash[:venue] = self.venue
+    hash[:company] = self.company
     hash[:reviews] = self.reviews
     hash[:products] = self.products
     hash[:orders] = self.orders

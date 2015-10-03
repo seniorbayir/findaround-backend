@@ -3,13 +3,9 @@ Rails.application.routes.draw do
   root 'application#root'
 
   get 'test' => 'application#test'
-  get 'venue' => 'application#venue'
-  get 'product' => 'application#product'
 
-  resources :users
-  resources :products
-  resources :venues
-  resources :reviews
+  resources :products, only: :show
+  resources :companies, only: :show
 
   # get 'users/:id/products' => 'users#products'
 

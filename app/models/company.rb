@@ -1,8 +1,8 @@
-class Venue < ActiveRecord::Base
+class Company < ActiveRecord::Base
 
-  has_many :products, inverse_of: :venue, dependent: :destroy
+  has_many :products, inverse_of: :company, dependent: :destroy
   has_many :reviews, through: :products
-  belongs_to :user, inverse_of: :venue
+  belongs_to :user, inverse_of: :company
 
   validates :user, { presence: true }
   validates :name, { presence: true, length: { minimum: 3, maximum: 50 } }
@@ -15,7 +15,7 @@ class Venue < ActiveRecord::Base
     hash
   end
 
-  def Venue::get_hash params
+  def Company::get_hash params
     params.permit :name, :user_id
   end
 
