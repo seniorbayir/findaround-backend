@@ -5,7 +5,7 @@ module CompaniesHelper
   def CompaniesHelper::get_company id
     if id === '1'
         company = OpenStruct.new
-        company.name = 'Joe’s Electronics Workshop'
+        company.name = 'Joe’s Child Workshop'
         company.user = OpenStruct.new
         company.user.name = 'Joe Hart'
         company.address = 'Camii’nin yanindaki sokaktan girince, sergi’yi gecince sagdayiz hemen.'
