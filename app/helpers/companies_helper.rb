@@ -25,7 +25,7 @@ module CompaniesHelper
         company.folders = ['halı kilim', 'travel']
         company.products = []
         company
-    elsif id == '2'
+    elsif id == '3'
 
     else
         company = OpenStruct.new
